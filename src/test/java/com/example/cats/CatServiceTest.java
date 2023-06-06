@@ -4,9 +4,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.example.cats.Commons.CatNotFoundException;
+import com.example.cats.Model.Cat;
+import com.example.cats.Repository.CatRepository;
+import com.example.cats.Service.CatService;
 
 import java.util.Optional;
 
@@ -16,7 +18,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-//@ExtendWith(SpringExtension.class)
 public class CatServiceTest {
 
     @Mock

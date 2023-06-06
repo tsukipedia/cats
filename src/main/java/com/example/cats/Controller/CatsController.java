@@ -1,8 +1,11 @@
-package com.example.cats;
+package com.example.cats.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.cats.Model.Cat;
+import com.example.cats.Service.CatService;
 
 @RestController
 public class CatsController {

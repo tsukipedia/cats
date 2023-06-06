@@ -1,6 +1,10 @@
-package com.example.cats;
+package com.example.cats.Service;
 
 import org.springframework.stereotype.Service;
+
+import com.example.cats.Commons.CatNotFoundException;
+import com.example.cats.Model.Cat;
+import com.example.cats.Repository.CatRepository;
 
 import java.util.Optional;
 

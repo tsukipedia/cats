@@ -12,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import com.example.cats.Model.Cat;
+import com.example.cats.Repository.CatRepository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

@@ -9,13 +9,16 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
-import static org.hamcrest.Matchers.hasSize;
+import com.example.cats.Commons.CatNotFoundException;
+import com.example.cats.Controller.CatsController;
+import com.example.cats.Model.Cat;
+import com.example.cats.Service.CatService;
+
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.StatusResultMatchersExtensionsKt.isEqualTo;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(CatsController.class)
