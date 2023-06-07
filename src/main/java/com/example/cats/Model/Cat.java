@@ -1,20 +1,16 @@
 package com.example.cats.Model;
 
-import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.Data;
 
-@Getter
-@Setter
-@With
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
+@Data
+@Document(collection="cats")
 public class Cat {
 
     @Id
-    private long id;
+    private String id;
 
     private String name;
 

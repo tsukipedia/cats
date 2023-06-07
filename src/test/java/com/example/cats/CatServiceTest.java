@@ -28,15 +28,18 @@ public class CatServiceTest {
 
         CatService catService = new CatService(catRepo);
 
-        Optional<Cat> cat = Optional.of(new Cat().withId(1).withName("Boots"));
+        Cat catEntity = new Cat();
+        catEntity.setId("1");
+        catEntity.setName("Boots");
+        Optional<Cat> cat = Optional.of(catEntity);
 
-        when(catRepo.findById(1L)).thenReturn(cat);
+        when(catRepo.findById("1")).thenReturn(cat);
 
-        Cat foundCat = catService.findById(1);
+        Cat foundCat = catService.findById("1");
 
         assertThat(foundCat).isEqualTo(cat.get());
 
-        verify(catRepo).findById(1L);
+        verify(catRepo).findById("1");
 
     }
 
@@ -46,13 +49,13 @@ public class CatServiceTest {
 
         Optional<Cat> cat = Optional.empty();
 
-        when(catRepo.findById(1L)).thenReturn(cat);
+        when(catRepo.findById("1")).thenReturn(cat);
 
         assertThrows(CatNotFoundException.class, () -> {
-            Cat foundCat = catService.findById(1);
+            Cat foundCat = catService.findById("1");
         });
 
-        verify(catRepo).findById(1L);
+        verify(catRepo).findById("1");
     }
 
 }

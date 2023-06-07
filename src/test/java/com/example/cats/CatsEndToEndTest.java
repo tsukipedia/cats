@@ -38,13 +38,14 @@ public class CatsEndToEndTest {
 
     @Test
     public void testGetById() throws Exception {
-        Cat cat = new Cat().withId(1).withName("Boots");
+        Cat cat = new Cat();
+        cat.setName("Boots");
 
-        catRepo.save(cat);
+        Cat savedCat = catRepo.save(cat);
 
-        ResponseEntity<Cat> foundCat = testRestTemplate.getForEntity("/api/cat/1", Cat.class);
+        ResponseEntity<Cat> foundCat = testRestTemplate.getForEntity("/api/cats/" + savedCat.getId(), Cat.class);
 
-        assertEquals(foundCat.getStatusCode(), HttpStatus.OK);
+        assertEquals(HttpStatus.OK, foundCat.getStatusCode());
 
         assertNotNull(foundCat);
         assertEquals(foundCat.getBody().getName(), "Boots");
@@ -54,7 +55,7 @@ public class CatsEndToEndTest {
     @Test
     public void testGetByIdNotFound() throws Exception {
 
-        ResponseEntity<Cat> foundCat = testRestTemplate.getForEntity("/api/cat/1", Cat.class);
+        ResponseEntity<Cat> foundCat = testRestTemplate.getForEntity("/api/cats/1", Cat.class);
 
         assertEquals(foundCat.getStatusCode(), HttpStatus.NOT_FOUND);
 

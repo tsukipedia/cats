@@ -17,7 +17,7 @@ public class CatService {
         this.catRepository = catRepository;
     }
 
-    public Cat findById(long id) throws CatNotFoundException {
+    public Cat findById(String id) throws CatNotFoundException {
 
         Optional<Cat> oCat = catRepository.findById(id);
 
@@ -25,5 +25,9 @@ public class CatService {
             throw new CatNotFoundException();
         }
         return oCat.get();
+    }
+
+    public Cat createNewCat(Cat cat) {
+        return catRepository.save(cat);
     }
 }

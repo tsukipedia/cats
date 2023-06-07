@@ -31,27 +31,29 @@ public class CatsControllerTest {
 
     @Test
     public void testGetById() throws Exception {
-        Cat cat = new Cat().withId(1).withName("Boots");
+        Cat cat = new Cat();
+        cat.setId("1");
+        cat.setName("Boots");
 
-        when(catService.findById(1)).thenReturn(cat);
+        when(catService.findById("1")).thenReturn(cat);
 
-        ResultActions result = mockMvc.perform(get("/api/cat/1"))
+        ResultActions result = mockMvc.perform(get("/api/cats/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("Boots"));
 
-        verify(catService).findById(1);
+        verify(catService).findById("1");
 
     }
 
     @Test
     public void testGetByIdNotFound() throws Exception {
 
-        when(catService.findById(1)).thenThrow(new CatNotFoundException());
+        when(catService.findById("1")).thenThrow(new CatNotFoundException());
 
-        ResultActions result = mockMvc.perform(get("/api/cat/1"))
+        ResultActions result = mockMvc.perform(get("/api/cats/1"))
                 .andExpect(status().isNotFound());
 
-        verify(catService).findById(1);
+        verify(catService).findById("1");
 
     }
 }
