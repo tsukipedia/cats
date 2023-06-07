@@ -1,4 +1,4 @@
-package com.example.cats.Commons;
+package com.example.cats.Controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

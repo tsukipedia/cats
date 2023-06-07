@@ -9,7 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
-import com.example.cats.Commons.CatNotFoundException;
+import com.example.cats.Controller.CatNotFoundException;
 import com.example.cats.Controller.CatsController;
 import com.example.cats.Model.Cat;
 import com.example.cats.Service.CatService;

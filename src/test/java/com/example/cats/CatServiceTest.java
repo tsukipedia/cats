@@ -5,7 +5,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.example.cats.Commons.CatNotFoundException;
+import com.example.cats.Controller.CatNotFoundException;
 import com.example.cats.Model.Cat;
 import com.example.cats.Repository.CatRepository;
 import com.example.cats.Service.CatService;

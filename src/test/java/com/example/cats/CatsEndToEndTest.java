@@ -54,7 +54,6 @@ public class CatsEndToEndTest {
     @Test
     public void testGetByIdNotFound() throws Exception {
 
-
         ResponseEntity<Cat> foundCat = testRestTemplate.getForEntity("/api/cat/1", Cat.class);
 
         assertEquals(foundCat.getStatusCode(), HttpStatus.NOT_FOUND);
