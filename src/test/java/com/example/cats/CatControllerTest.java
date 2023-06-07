@@ -10,7 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
 import com.example.cats.Controller.CatNotFoundException;
-import com.example.cats.Controller.CatsController;
+import com.example.cats.Controller.CatController;
 import com.example.cats.Model.Cat;
 import com.example.cats.Service.CatService;
 
@@ -21,8 +21,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(CatsController.class)
-public class CatsControllerTest {
+@WebMvcTest(CatController.class)
+public class CatControllerTest {
     @MockBean
     CatService catService;
 

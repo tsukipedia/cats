@@ -12,11 +12,11 @@ import com.example.cats.Service.CatService;
 
 @RestController
 @RequestMapping("/api/v1/cats/")
-public class CatsController {
+public class CatController {
 
     private CatService catService;
 
-    public CatsController (CatService catService) {
+    public CatController (CatService catService) {
         this.catService = catService;
     }
 
