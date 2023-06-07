@@ -18,9 +18,14 @@ public class CatsController {
         this.catService = catService;
     }
 
-    @GetMapping("/api/cats/{id}")
+    @GetMapping("/api/cats/id/{id}")
     public Cat getCatById(@PathVariable String id) throws Exception {
         return catService.findById(id);
+    }
+
+    @GetMapping("/api/cats/name/{name}")
+    public Cat getCatByName(@PathVariable String name) throws Exception {
+        return catService.findByName(name);
     }
 
     @PostMapping("/api/cats")

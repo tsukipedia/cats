@@ -27,7 +27,17 @@ public class CatService {
         return oCat.get();
     }
 
+    public Cat findByName(String name) throws CatNotFoundException {
+        Optional<Cat> oCat = catRepository.findByName(name);
+
+        if (oCat.isEmpty()) {
+            throw new CatNotFoundException();
+        }
+        return oCat.get();
+    }
+
     public Cat createNewCat(Cat cat) {
         return catRepository.save(cat);
     }
+
 }
